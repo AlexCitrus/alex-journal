@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h3>
+  <i class="fas fa-book-open mr-2"></i>Your Journals
+</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journals.each do |journal| %>
+      <tr>
+        <td><%= link_to journal.name, journal %></td>
+        <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
+        <td>
+          <%= link_to 'Destroy', journal, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br />

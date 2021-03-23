@@ -1,0 +1,41 @@
+<%= form_with(model: journal) do |form| %>
+  <% if journal.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(journal.errors.count, "error") %> prohibited this journal
+        from being saved:
+      </h2>
+
+      <ul>
+        <% journal.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-container">
+    <div class="field mb-3">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="actions">
+      <%= button_tag :submit, class:"btn btn-primary" do %>
+        <% if action_name == 'new'%>
+          <i class="fas fa-plus mr-3"></i>
+          Create Journal
+        <% elsif action_name == 'edit' %>
+          <i class="fas fa-plus mr-3"></i>
+          Update Journal
+        <% end %>
+      <% end %>
+
+      <%= link_to journals_path do%>
+        <div class="btn btn-danger">
+          <i class="fas fa-undo mr-2"></i> Cancel
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
