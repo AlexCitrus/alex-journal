@@ -1,8 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<h3>
-  <i class="fas fa-book-open mr-2"></i>Your Journals
-</h3>
+
+<div
+  id="home-dashboard-top-statistics"
+  class="box has-background-info-dark has-text-white has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
+>
+  <div class="is-size-4">
+    <i class="fas fa-book-open mr-1" aria-hidden="true"></i>
+    Your Journals
+  </div>
+  <div class="categories-progress-container">
+    0 / 0 tasks are completed!
+    <progress
+      class="progress is-success journal-progress"
+      value="0"
+      max="0"
+    ></progress>
+  </div>
+</div>
 
 <table class="table">
   <thead>

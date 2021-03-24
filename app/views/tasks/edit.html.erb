@@ -1,0 +1,6 @@
+<h1>Editing Task</h1>
+
+<%= render 'form', journal: @journal, task: @task %>
+
+<%= link_to 'Show', journal_task_path(@journal, @task) %> |
+<%= link_to 'Back', @journal %>

@@ -1,0 +1,39 @@
+<%= form_with(model: [journal, task]) do |form| %>
+  <% if task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+        <% task.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  
+
+  <div class="actions">
+    <%= button_tag :submit, class:"button has-background-primary-dark has-text-light" do %>
+        <% if action_name == 'new'%>
+          <i class="fas fa-plus mr-3"></i>
+          Create Task
+        <% elsif action_name == 'edit' %>
+          <i class="fas fa-plus mr-3"></i>
+          Update Task
+        <% end %>
+      <% end %>
+
+      <%= link_to journals_path do%>
+        <div class="button has-background-danger-dark has-text-light">
+          <i class="fas fa-undo mr-2"></i> Cancel
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

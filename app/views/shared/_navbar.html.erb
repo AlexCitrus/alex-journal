@@ -1,39 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fas fa-tasks mr-2"></i>TaskVio</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand is-flex is-align-items-center">
+  <i class="fas fa-tasks mr-2 navbar-item title-icon is-size-3"></i>
+    <a class="navbar-item title-text has-text-primary-dark has-text-weight-bold is-size-3" href="/">
+      TaskVio
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+      id="burger"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+<div class="navbar-menu" id='nav-links'>
+    <div class="navbar-end">
+      <div class="navbar-item">
         <% if user_signed_in? %>
-        <li class="nav-item">
-            <%= link_to 'Dashboard', journals_path, class: 'nav-link'%>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'New Journal', new_journal_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'nav-link'%>
-          </li>
+          <div class="buttons">
+            <%= link_to 'Dashboard', journals_path, class: 'button navbar-item'%>
+            <%= link_to 'New Journal', new_journal_path, class: 'button navbar-item' %>
+            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'button has-background-danger-dark has-text-light navbar-item'%>
+          </div>
         <% else %>
-          <li class="nav-item">
-            <%= link_to 'Register', new_user_registration_path, class: 'nav-link'%>
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Sign-in', new_user_session_path, class: 'nav-link'%>
-          </li>
+        <div class="buttons">
+          <%= link_to 'Register', new_user_registration_path, class: 'button has-background-primary-dark has-text-light navbar-item'%>
+
+          <%= link_to 'Sign-in', new_user_session_path, class: 'button has-background-link-dark has-text-light navbar-item'%>
+        </div>
         <% end %>
-      </ul>
+      </div>
     </div>
+</div>
   </div>
 </nav>
