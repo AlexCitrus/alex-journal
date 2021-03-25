@@ -19,26 +19,23 @@
   </div>
 </div>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @journals.each do |journal| %>
-      <tr>
-        <td><%= link_to journal.name, journal %></td>
-        <td><%= link_to 'Edit', edit_journal_path(journal) %></td>
-        <td>
-          <%= link_to 'Destroy', journal, method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br />
+<div class="tile tile-container is-ancestor">
+<% @journals.each do |journal| %>
+  <div class="tile tile-item is-parent">
+    <article class="tile is-child box">
+      <p class="title"><%= link_to journal.name, journal %></p>
+      <div class="tile-actions">
+      <%= link_to edit_journal_path(journal), class:"button is-warning is-light has-text-warning action-tile-button mr-2" do%>
+         <i class="fas fa-edit" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to journal, method: :delete, data: { confirm: 'Are you sure?' }, class:"button is-danger is-light has-text-danger action-tile-button" do %>
+        <i class="far fa-trash-alt" aria-hidden="true"></i>
+      <% end %>
+      </div>
+      
+    </article>
+  </div>
+  <% end %>
+</div>
