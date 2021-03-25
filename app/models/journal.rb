@@ -1,6 +1,6 @@
 class Journal < ApplicationRecord
   belongs_to :user
-  has_many :tasks
+  has_many :tasks, dependent: :destroy
 
   def get_next_task_position
     if tasks.none? { |page| page.persisted?}
