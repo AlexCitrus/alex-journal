@@ -14,7 +14,90 @@
  *= require_self
  */
 
+ /* .title-icon {
+    width: 60px;
+    height: 100%;
+} */
+
+:root{
+    --color_one: #2a283d;
+    --color_two: #21c58e;
+    --color_three: #f1fafe;
+    --color_four: #017bf1;
+    --color_five: #E84A5F; 
+    --nav_bar: #ddecfc;
+}
+
+html{
+    background-color: var(--color_three);
+}
+
+.info-box{
+    background-color: var(--color_four);
+}
+
+.navbar{
+    background-color: var(--color_three);
+}
+
+/* .card-bg{
+    background-color: var(--nav_bar);
+} */
+
+.login{
+
+    background-color: #19c78b;
+}
+
+.nav_icon{
+    color: var(--color_one);
+}
+
 .newjournal-svg{
     width: 200px;
 }
 
+.container-left img, .container-right form, .container-right .container-errors {
+    width: 75%;
+    height: auto;
+}
+
+.container-left, .container-right {
+    display: flex !important;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.container-right{
+    flex-direction: column;
+}
+
+@media screen and (min-width: 769px), print{
+    .column.is-6, .column.is-6-tablet {
+        flex: none;
+        width: 50%;
+    }
+}
+
+.columns {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    margin-top: -0.75rem;
+}
+
+.tiles{
+    margin-bottom: 200px;
+}
+
+
+.footer__wave {
+    display: block;
+    width: 100%;
+    height: 100px;
+    max-height: 100px;
+    margin: 0;
+    bottom: 0;
+    position: fixed;
+    left: 0px;
+    float: left;
+}

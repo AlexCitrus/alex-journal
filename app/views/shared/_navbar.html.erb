@@ -2,9 +2,10 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
 <div class="container mt-4 mb-4">
   <div class="navbar-brand is-flex is-align-items-center">
-  <i class="fas fa-tasks mr-2 navbar-item title-icon is-size-3"></i>
-    <a class="navbar-item title-text has-text-primary-dark has-text-weight-bold is-size-3" href="/">
-      TaskVio
+
+  <i class="fas fa-book-reader mr-2 navbar-item title-icon is-size-3 nav_icon"></i>
+    <a class="navbar-item title-text has-text-weight-bold is-size-3 nav_icon" href="/">
+      Journally
     </a>
 
     <a
@@ -27,14 +28,20 @@
         <% if user_signed_in? %>
           <div class="buttons">
             <%= link_to 'Dashboard', journals_path, class: 'navbar-item mr-2'%>
-            <%= link_to 'New Journal', new_journal_path, class: 'navbar-item mr-2' %>
-            <%= link_to 'Sign-out', destroy_user_session_path, method: :delete, class: 'button has-background-danger-dark has-text-light navbar-item'%>
+            <%= link_to 'New Journal', new_journal_path, class: 'navbar-item mr-3' %>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-item' do%>
+              <i class="fas fa-sign-out-alt mr-1"></i> Sign-out
+            <% end %>
           </div>
         <% else %>
         <div class="buttons">
-          <%= link_to 'Register', new_user_registration_path, class: 'button has-background-primary-dark has-text-light navbar-item'%>
+          <%= link_to  new_user_registration_path, class: 'navbar-item mr-3' do%>
+          <i class="fas fa-user-plus mr-1"></i> Register
+          <% end %>
 
-          <%= link_to 'Sign-in', new_user_session_path, class: 'button has-background-link-dark has-text-light navbar-item'%>
+          <%= link_to new_user_session_path, class: 'navbar-item' do%>
+            <i class="fas fa-sign-in-alt mr-1"></i> Sign-in
+            <% end %>
         </div>
         <% end %>
       </div>

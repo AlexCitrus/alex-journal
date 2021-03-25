@@ -3,5 +3,5 @@ Rails.application.routes.draw do
     resources :tasks
   end
   devise_for :users
-  root to: "home#index" 
+  root to: "journals#index" 
 end

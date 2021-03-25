@@ -18,17 +18,57 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    
+
     <%# <script src="./assets/index.js" defer></script> %>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+
     <div class="container">
       <%= yield %>
     </div>
+    <footer class="container">
+      <div class="column is-12 my-5 has-text-centered content">
+        <p>© 2021 Journal Project</p>
+      </div>
+    </footer>
+    <svg
+      class="footer__wave"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28 "
+      preserveAspectRatio="none"
+    >
+      <defs>
+        <path
+          id="footer__wave"
+          d="M-160 44c30 0 
+    58-18 88-18s
+    58 18 88 18 
+    58-18 88-18 
+    58 18 88 18
+    v44h-352z"
+        ></path>
+      </defs>
+
+      <g class="parallax1">
+        <use xlink:href="#footer__wave" x="50" y="3" fill="#a21c58e"></use>
+      </g>
+
+      <g class="parallax2">
+        <use xlink:href="#footer__wave" x="50" y="0" fill="#d3f0ec"></use>
+      </g>
+
+      <g class="parallax3">
+        <use xlink:href="#footer__wave" x="50" y="9" fill="#21c58e"></use>
+      </g>
+
+      <g class="parallax4">
+        <use xlink:href="#footer__wave" x="50" y="6" fill="#21c58e"></use>
+      </g>
+    </svg>
+
     <%= javascript_pack_tag 'index' %>
   </body>
 </html>

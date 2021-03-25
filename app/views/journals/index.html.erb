@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
 
 
+<div class="container tiles">
 <div
   id="home-dashboard-top-statistics"
-  class="box has-background-info-dark has-text-white has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
+  class="box info-box has-text-white has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
 >
   <div class="is-size-4">
-    <i class="fas fa-book-open mr-1" aria-hidden="true"></i>
+    <i class="fas fa-book mr-1" aria-hidden="true"></i>
     Your Journals
   </div>
   <div class="categories-progress-container">
@@ -23,10 +23,10 @@
 
 <div class="tile tile-container is-ancestor">
 <% @journals.each do |journal| %>
-  <div class="tile tile-item is-parent">
-    <article class="tile is-child box">
+  <div class="tile tile-item is-parent is-shady">
+    <article class="tile is-child box card-bg">
     <div class="tile-contents">
-      <h3 class="title is-size-3 has-text-primary"><%= link_to journal.name, journal, class:"cardTitle" %></h3>
+      <h3 class="title is-size-3 has-text-primary"><%= link_to journal.name, journal, class:"cardTitle nav_icon" %></h3>
       <p class="subtitle is-size-6 mb-4 has-text-black">
         <span class="mr-2">
           <i class="fas fa-clipboard-list mr-2 aria-hidden="true"></i>
@@ -55,3 +55,4 @@
 </div>
 
 
+</div>
