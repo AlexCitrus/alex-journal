@@ -22,20 +22,32 @@
 :root{
     --color_one: #352e51;
     --color_two: #21c58e;
-    --color_three: #f0fbff;
+    --color_three: #F0FAF7;
     --color_four: #017bf1;
     --color_five: #c54c21; 
     --nav_bar: #ffffff;
-    --logo_color: #c54c21;
+    --logo_color: #352e51;
+    --new_color: #c58d20;
 }
 
 html{
     background-color: var(--color_three);
     font-family: 'Poppins', sans-serif;
+    background: url("/assets/wavebg.svg");
+}
+
+
+
+.card_title{
+    color: var(--color_five);
 }
 
 .info-box{
     background-color: var(--color_four);
+}
+
+.box-bg{
+    background-color: var(--new_color);
 }
 
 .logo{
