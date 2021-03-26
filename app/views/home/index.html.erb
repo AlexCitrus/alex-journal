@@ -1,4 +1,35 @@
-<% name = current_user.present? ? current_user.email : 'Random Person'%>
+<section class="container container-content mt-6 mr-6 ml-6">
+  <div class="columns">
+    <div class="column is-6 container-left">
+      <%= image_tag("accept-tasks-animate.svg", :alt => "rss feed") %>
+    </div>
 
-<h1>Welcome, <%= name %>!</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+    <div
+      id="home-index-right"
+      class="column is-6 container-right is-flex is-justify-content-center is-align-items-flex-start"
+    >
+      <h1 class="is-size-1 has-text-weight-bold home-title">TaskGo</h1>
+      <p class="is-size-4 mb-6 home-text">
+        Manage projects, Organize tasks.<br />
+        From high rises to the home office, <br />
+        Do it all with TaskGo!
+      </p>
+
+      <% if user_signed_in? %>
+        <p>
+          <%= link_to journals_path, class: 'button start-now' do%>
+            Start Now!
+          <% end %>
+        </p>
+      <% else %>
+        <p>
+          <%= link_to  new_user_registration_path, class: 'button start-now' do%>
+            Start Now!
+          <% end %>
+        </p>
+      <% end %>
+
+      
+    </div>
+  </div>
+</section>

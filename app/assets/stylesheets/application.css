@@ -20,26 +20,39 @@
 } */
 
 :root{
-    --color_one: #2a283d;
+    --color_one: #352e51;
     --color_two: #21c58e;
-    --color_three: #f1fafe;
+    --color_three: #f0fbff;
     --color_four: #017bf1;
-    --color_five: #E84A5F; 
-    --nav_bar: #ddecfc;
+    --color_five: #c54c21; 
+    --nav_bar: #ffffff;
+    --logo_color: #c54c21;
 }
 
 html{
     background-color: var(--color_three);
+    font-family: 'Poppins', sans-serif;
 }
 
 .info-box{
     background-color: var(--color_four);
 }
 
+.logo{
+    color: var(--logo_color);
+}
+
+.home-title{
+    color: var(--color_five);
+}
+
 .navbar{
     background-color: var(--color_three);
 }
 
+.home-text{
+    color: var(--color_one);
+}
 /* .card-bg{
     background-color: var(--nav_bar);
 } */
@@ -47,6 +60,16 @@ html{
 .login{
 
     background-color: #19c78b;
+}
+
+.start-now{
+    background-color: var(--color_five);
+    color: white;
+    border-radius: 10px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
 }
 
 .nav_icon{
