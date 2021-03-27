@@ -22,22 +22,21 @@
 :root {
   --color_one: #352e51;
   --color_two: #21c58e;
-  --color_three: #f0faf7;
-  --color_four: #2059c5;
-  --color_five: #c54c21;
+  --color_three: #191a1f;
+  --color_four: #34b6e3;
+  --color_five: #e14846;
   --nav_bar: #ffffff;
-  --logo_color: #352e51;
-  --new_color: #c58d20;
+  --logo_color: #e1164c;
+  --new_color: #121319;
 }
 
 html {
   background-color: var(--color_three);
   font-family: "Poppins", sans-serif;
-  background: url("/assets/wavebg.svg") no-repeat bottom center;
+  /* background: url("/assets/wavebg.svg") no-repeat bottom center; */
   height: 100%;
   width: 100%;
-  padding: 0;
-  margin: 0;
+  
 }
 
 .tile-color {
@@ -45,7 +44,7 @@ html {
 }
 
 .card_title {
-  color: var(--color_five);
+  color: var(--nav_bar);
 }
 
 .info-box {
@@ -61,15 +60,15 @@ html {
 }
 
 .home-title {
-  color: var(--color_five);
+  color: var(--nav_bar);
 }
 
 .navbar {
-  background-color: var(--color_three);
+  background-color: #131218;
 }
 
 .home-text {
-  color: var(--color_one);
+  color: var(--nav_bar);
 }
 /* .card-bg{
     background-color: var(--nav_bar);
@@ -79,9 +78,17 @@ html {
   background-color: #19c78b;
 }
 
+.task{
+  color: var(--logo_color);
+}
+
+.go{
+  color: #49c195;
+}
 .start-now {
   background-color: var(--color_five);
   color: white;
+  border: black;
   border-radius: 10px;
   padding-left: 30px;
   padding-top: 10px;
@@ -90,7 +97,7 @@ html {
 }
 
 .nav_icon {
-  color: var(--color_one);
+  color: var(--nav_bar);
 }
 
 .newjournal-svg {

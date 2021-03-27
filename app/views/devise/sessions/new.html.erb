@@ -10,25 +10,25 @@
 
 <div class="column is-6 container-right">
   <div class="field">
-    <%= f.label :email, class:"label" %>
+    <%= f.label :email, class:"label has-text-white" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email" , class:"input"%>
   </div>
 
   <div class="field">
-    <%= f.label :password, class:"label" %>
+    <%= f.label :password, class:"label has-text-white" %>
     <%= f.password_field :password, autocomplete: "current-password", class:"input" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me, class:"checkbox"%>
-      <%= f.label :remember_me, class:"checkbox" %>
+      <%= f.label :remember_me, class:"checkbox has-text-white" %>
     </div>
   <% end %>
 
   <div class="actions">
     
-    <%= f.button :submit, class: 'button is-rounded login has-text-white', value: 'Login' do%>
+    <%= f.button :submit, class: 'button is-rounded start-now', value: 'Login' do%>
       Log-in
     <% end %>
   </div>

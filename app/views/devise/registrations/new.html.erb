@@ -12,16 +12,16 @@
 <form class="new_user">
   <div class="field">
   <div class="control">
-    <%= f.label :email, class:"label" %>
+    <%= f.label :email, class:"label has-text-white" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input" %>
   </div>
   </div>
 
   <div class="field">
   <div class="control">
-    <%= f.label :password, class:"label" do %>
+    <%= f.label :password, class:"label has-text-white" do %>
     Password
-    <em class="has-text-weight-light">(Minimum of 6 characters)</em>
+    <em class="has-text-weight-light has-text-white">(Minimum of 6 characters)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class:"input" %>
   </div>
@@ -29,7 +29,7 @@
 
   <div class="field">
   <div class="control">
-    <%= f.label :password_confirmation, class:"label" do %>
+    <%= f.label :password_confirmation, class:"label has-text-white" do %>
     Confirm Password
     <% end %>
     
@@ -38,7 +38,7 @@
   </div>
 
   <div class="actions">
-    <%= f.button :submit, class: 'button is-rounded login has-text-white', value: 'Sign up' do%>
+    <%= f.button :submit, class: 'button is-rounded start-now', value: 'Sign up' do%>
       Sign-up
     <% end %>
   </div>
