@@ -3,7 +3,7 @@
 <div class="container tiles">
 <div
   id="home-dashboard-top-statistics"
-  class="box info-box has-text-white box-bg has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
+  class="box info-box has-text-white box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
 >
   <div class="is-size-4">
     <i class="fas fa-book mr-1" aria-hidden="true"></i>
@@ -23,7 +23,7 @@
 
 <div class="tile tile-container is-ancestor">
 <% @journals.each do |journal| %>
-  <div class="tile tile-item is-parent is-shady">
+  <div class="tile tile-item is-parent is-shady tile-color">
     <article class="tile is-child box card-bg">
     <div class="tile-contents">
       <h3 class="title is-size-3 has-text-primary"><%= link_to journal.name, journal, class:"cardTitle card_title" %></h3>
