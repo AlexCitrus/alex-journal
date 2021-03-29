@@ -26,7 +26,8 @@
   <div class="tile tile-item is-parent is-shady tile-color">
     <article class="tile is-child box card-bg">
     <div class="tile-contents">
-      <h3 class="title is-size-3 has-text-primary"><%= link_to journal.name, journal, class:"cardTitle card_title" %></h3>
+      <h3 class="title is-size-3 cardTitle card_title">
+      <%= journal.name %></h3>
       <p class="subtitle is-size-6 mb-4 has-text-grey-light">
         <span class="mr-2">
           <i class="fas fa-clipboard-list mr-2 aria-hidden="true"></i>
@@ -41,6 +42,9 @@
       </p>
     </div>
       <div class="tile-actions is-flex is-justify-content-flex-end">
+      <%= link_to journal, class:"button has-text-grey-lighter mr-2" do %>
+      <i class="fas fa-book"></i>
+      <% end %>
       <%= link_to edit_journal_path(journal), class:"button  has-text-warning action-tile-button mr-2" do%>
          <i class="fas fa-edit" aria-hidden="true"></i>
       <% end %>

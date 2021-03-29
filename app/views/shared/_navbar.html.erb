@@ -6,7 +6,7 @@
 
     <a class="navbar-item title-text has-text-weight-bold is-size-3 nav_icon" href="/">
     <i class="fas fa-book-reader navbar-item title-icon is-size-3 logo"></i>
-      <span class="has-text-white">Task</span><span class="go">Go</span>
+      <span class="has-text-white">TaskGo</span>
     </a>
 
     <a
@@ -36,11 +36,11 @@
           </div>
         <% else %>
         <div class="buttons">
-          <%= link_to  new_user_registration_path, class: 'navbar-item mr-3 has-text-white' do%>
+          <%= link_to  new_user_registration_path, class: 'navbar-item navbar-hover mr-3' do%>
           <i class="fas fa-user-plus mr-1"></i> Register
           <% end %>
 
-          <%= link_to new_user_session_path, class: 'navbar-item has-text-white' do%>
+          <%= link_to new_user_session_path, class: 'navbar-item navbar-hover' do%>
             <i class="fas fa-sign-in-alt mr-1"></i> Sign-in
             <% end %>
         </div>

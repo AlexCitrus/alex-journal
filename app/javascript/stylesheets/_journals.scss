@@ -18,6 +18,15 @@ a.navbar-hover {
   color: white;
 }
 
+a.navbar-item{
+    transition: all 0.3s ease-in-out;
+}
+
+a.navbar-item:hover {
+//   box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.2em);
+}
+
 a.navbar-hover:hover {
   background-position: -100%;
   color: black;
@@ -31,10 +40,26 @@ a.navbar-hover:hover {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 30px;
-  transition: background-color .2s ease, color .2s ease
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .start-now:hover {
-    background-color: #3d3d3d;
-    color: #efefef;
+  background-color: #3d3d3d;
+  color: #efefef;
+}
+
+.start-now-two {
+  background-color: var(--logo_color);
+  color: rgb(48, 48, 48);
+  border-radius: 5px;
+  border: 3px solid rgb(48, 48, 48);
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h3{
+    cursor: default;
 }
