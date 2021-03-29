@@ -25,7 +25,7 @@ class JournalsController < ApplicationController
     respond_to do |format|
       if @journal.save
         format.html do
-          redirect_to @journal, notice: 'Journal was successfully created.'
+          redirect_to journals_path, notice: 'Journal was successfully created.'
         end
         format.json { render :show, status: :created, location: @journal }
       else
@@ -42,7 +42,7 @@ class JournalsController < ApplicationController
     respond_to do |format|
       if @journal.update(journal_params)
         format.html do
-          redirect_to @journal, notice: 'Journal was successfully updated.'
+          redirect_to journals_path, notice: 'Journal was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @journal }
       else

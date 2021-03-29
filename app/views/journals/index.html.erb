@@ -6,7 +6,7 @@
   class="box info-box has-text-white box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
 >
   <div class="is-size-4">
-    <i class="fas fa-book mr-1" aria-hidden="true"></i>
+    <i class='bx bx-book-reader mr-1 icon-color logo-font'></i>
     Your Journals
   </div>
   <div class="categories-progress-container">
@@ -43,13 +43,13 @@
     </div>
       <div class="tile-actions is-flex is-justify-content-flex-end">
       <%= link_to journal, class:"button has-text-grey-lighter mr-2" do %>
-      <i class="fas fa-book"></i>
+      <i class='bx bx-book-open is-size-5' ></i>
       <% end %>
       <%= link_to edit_journal_path(journal), class:"button  has-text-warning action-tile-button mr-2" do%>
-         <i class="fas fa-edit" aria-hidden="true"></i>
+         <i class='bx bxs-edit is-size-5' ></i>
       <% end %>
       <%= link_to journal, method: :delete, data: { confirm: 'Are you sure?' }, class:"button has-text-danger" do %>
-        <i class="far fa-trash-alt" aria-hidden="true"></i>
+        <i class='bx bxs-trash is-size-5' ></i>
       <% end %>
       </div>
       

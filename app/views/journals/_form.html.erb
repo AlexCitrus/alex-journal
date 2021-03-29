@@ -14,14 +14,16 @@
     </div>
   <% end %>
 
-  <div class="form-container">
+
     <div class="field mb-3">
-      <%= form.label :name , class:"label"%>
-      <%= form.text_field :name, class: 'control' %>
+      <%= form.label :name , class:"label has-text-white" do%>
+      Journal Name
+      <% end %>
+      <%= form.text_field :name, class: 'input' %>
     </div>
 
     <div class="actions">
-      <%= button_tag :submit, class:"button has-background-primary-dark has-text-light" do %>
+      <%= button_tag :submit, class:"button start-now-two" do %>
         <% if action_name == 'new'%>
           <i class="fas fa-plus mr-3"></i>
           Create Journal
@@ -32,10 +34,10 @@
       <% end %>
 
       <%= link_to journals_path do%>
-        <div class="button has-background-danger-dark has-text-light">
+        <div class="button start-now-three">
           <i class="fas fa-undo mr-2"></i> Cancel
         </div>
       <% end %>
     </div>
-  </div>
+
 <% end %>

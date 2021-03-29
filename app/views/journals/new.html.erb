@@ -1,7 +1,15 @@
-<h3><i class="fas fa-book-open mr-2"></i>New Journal</h3>
 
-<%= image_tag("add-files-animate.svg", :alt => "rss feed", class: "newjournal-svg") %>
-
-<%= render 'form', journal: @journal %>
+<section class="container container-content mt-6 mr-6 ml-6">
+<div class="columns">
 
 
+<div class="column is-6 container-right">
+  <%= render 'form', journal: @journal %>
+</div>
+
+<div class="column is-6 container-left">
+  <%= image_tag("add-files-animate.svg", :alt => "rss feed", class: "newjournal-svg") %>
+</div>
+
+
+  </section>

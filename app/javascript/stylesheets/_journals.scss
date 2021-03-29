@@ -33,7 +33,7 @@ a.navbar-hover:hover {
 }
 
 .start-now {
-  background-color: var(--start-now-color);
+  background-color: var(--logo_color);
   color: rgb(48, 48, 48);
   border: 3px solid rgb(48, 48, 48);
   padding-left: 30px;
@@ -60,6 +60,35 @@ a.navbar-hover:hover {
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
+.start-now-three {
+    background-color: var(--color_five);
+    color: rgb(48, 48, 48);
+    border-radius: 5px;
+    border: 3px solid rgb(48, 48, 48);
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
 h3{
     cursor: default;
+}
+
+.icon-color{
+    color: var(--logo_color);
+    
+}
+.logo-font{
+    font-size: 25px;
+}
+
+.navbar{
+    box-shadow: 0 10px 15px -15px rgba(0, 0, 0, 0.5);
+}
+
+.tile-container {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
