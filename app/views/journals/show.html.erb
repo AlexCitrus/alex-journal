@@ -2,16 +2,19 @@
 
 <div class="container tiles">
 <div
-  id="home-dashboard-top-statistics"
+  id="task_box"
   class="box info-box has-text-white box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
 >
   <div class="is-size-4">
     <i class='bx bx-book-reader mr-1 icon-color logo-font'></i>
     <%= @journal.name %>
+    
   </div>
   <div class="task-progress-container is-flex">
       <div class="mr-3 progress-container">
+      <%# <span class="has-text-black"> %>
         0 / 0 tasks are completed!
+      <%# </span> %>
         <progress class="progress is-success journal-progress" value="0" max="0"></progress>
       </div>
       <div>
@@ -23,14 +26,10 @@
       </div>
     </div>
   </div>
-</div>
-
-
-
 <div class="tile tile-container is-ancestor">
 <% @journal.tasks.each do |task| %>
   <div class="tile tile-item is-parent is-shady tile-color">
-    <article class="tile is-child box card-bg">
+    <article class="tile is-child box card-bg"  id="task_box">
     <div class="tile-contents">
       <h3 class="title is-size-3 cardTitle card_title">
       <%= task.name %></h3>
@@ -61,3 +60,6 @@
   </div>
   <% end %>
 </div>
+</div>
+
+

@@ -76,6 +76,10 @@ a.navbar-hover:hover {
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
+#task_box{
+    background-color: rgba(247,247,247, 0.1);
+}
+
   .start-now-four {
     background-color: var(--logo_color);
     color: rgb(48, 48, 48);
@@ -111,4 +115,8 @@ h3{
 
 .trix-toolbar{
     display: none;
+}
+
+.tiles{
+    margin-bottom: 200px;
 }
