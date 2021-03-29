@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <div class="container tiles">
 <div
@@ -16,7 +16,7 @@
       </div>
       <div>
 
-        <%= link_to new_journal_task_path(@journal), class: 'button is-info' do %>
+        <%= link_to new_journal_task_path(@journal), class: 'button start-now-four' do %>
 
           <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
         <% end %>
@@ -25,33 +25,39 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_journal_path(@journal) %> |
-<%= link_to 'Back', journals_path %>
 
 
-<table class="table is-bordered is-fullwidth">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Name</th>
-      <th>User</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @journal.tasks.each do |task| %>
-      <tr>
-        <td><%= task.position %></td>
-        <td><%= link_to task.name, journal_task_path(@journal, task) %></td>
-        <td><%= link_to 'Edit', edit_journal_task_path(@journal, task) %></td>
-        <td>
-          <%= link_to 'Destroy', journal_task_path(@journal, task), method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br/>
+<div class="tile tile-container is-ancestor">
+<% @journal.tasks.each do |task| %>
+  <div class="tile tile-item is-parent is-shady tile-color">
+    <article class="tile is-child box card-bg">
+    <div class="tile-contents">
+      <h3 class="title is-size-3 cardTitle card_title">
+      <%= task.name %></h3>
+      <p class="subtitle is-size-6 mb-4 has-text-grey-light">
+        <span class="mr-2">
+          <i class="fas fa-clipboard-list mr-2 aria-hidden="true"></i>
+          <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+        </span>
+      </p>
+      <p class="subtitle is-size-6 mb-6 has-text-grey">
+      
+        <span class="mr-2">
+          <i class="fas fa-clock mr-2 aria-hidden="true"></i>
+          
+        </span>
+      </p>
+    </div>
+      <div class="tile-actions is-flex is-justify-content-flex-end">
+      <%= link_to edit_journal_task_path(@journal, task), class:"button  has-text-warning action-tile-button mr-2" do%>
+         <i class='bx bxs-edit is-size-5' ></i>
+      <% end %>
+      <%= link_to journal_task_path(@journal, task), method: :delete, data: { confirm: 'Are you sure?' }, class:"button has-text-danger" do %>
+        <i class='bx bxs-trash is-size-5' ></i>
+      <% end %>
+      </div>
+      
+    </article>
+  </div>
+  <% end %>
 </div>

@@ -32,6 +32,10 @@ a.navbar-hover:hover {
   color: black;
 }
 
+.margin_none{
+    margin: 0;
+}
+
 .start-now {
   background-color: var(--logo_color);
   color: rgb(48, 48, 48);
@@ -72,6 +76,18 @@ a.navbar-hover:hover {
     transition: background-color 0.2s ease, color 0.2s ease;
   }
 
+  .start-now-four {
+    background-color: var(--logo_color);
+    color: rgb(48, 48, 48);
+    border-radius: 5px;
+    border: 3px solid rgb(48, 48, 48);
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
 h3{
     cursor: default;
 }
@@ -91,4 +107,8 @@ h3{
 .tile-container {
     display: grid !important;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.trix-toolbar{
+    display: none;
 }

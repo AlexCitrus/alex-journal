@@ -5,15 +5,9 @@
   <%= @task.name %>
 </p>
 
-<p>
-  <strong>Position:</strong>
-  <%= @task.position %>
-</p>
+<%= link_to 'Edit', edit_journal_task_path(@journal, @task) %> 
 
-<p>
-  <strong>Journal:</strong>
-  <%= @task.journal_id %>
-</p>
+<%= form_with(model: [@journal, @task, @description]) do |form| %>
+  <%= form.submit "Add Paragraph", class: 'button is-primary' %>
+<% end %>
 
-<%= link_to 'Edit', edit_journal_task_path(@journal, @task) %> |
-<%= link_to 'Back', @journal %>

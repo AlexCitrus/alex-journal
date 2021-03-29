@@ -16,10 +16,13 @@
 
 
     <div class="field mb-3">
-      <%= form.label :name , class:"label has-text-white" do%>
-      Journal Name
-      <% end %>
-      <%= form.text_field :name, class: 'input' %>
+    <div class="control has-icons-left has-icons-right">
+      
+      <%= form.text_field :name, placeholder: "Journal Name", class: "input", autocomplete: :off %>
+      <span class="icon is-left">
+      <i class='bx bxs-pencil' ></i>
+    </span>
+    </div>
     </div>
 
     <div class="actions">

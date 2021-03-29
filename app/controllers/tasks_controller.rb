@@ -3,7 +3,9 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
 
   # GET /tasks/1 or /tasks/1.json
-  def show; end
+  def show
+  @description = @task.descriptions.build
+  end
 
   # GET /tasks/new
   def new
@@ -16,11 +18,10 @@ class TasksController < ApplicationController
   # POST /tasks or /tasks.json
   def create
     @task = @journal.tasks.build(task_params)
-
     @task.position = @journal.get_next_task_position
 
     if @task.save
-      redirect_to journal_task_path(@journal, @task),
+      redirect_to @journal,
                   notice: 'Task was successfully created.'
     else
       render :new
@@ -30,7 +31,7 @@ class TasksController < ApplicationController
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
     if @task.update(task_params)
-      redirect_to redirect_to journal_task_path(@journal, @task),
+      redirect_to @journal,
                               notice: 'Task was successfully updated.'
     else
       render :edit
@@ -56,6 +57,6 @@ class TasksController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def task_params
-    params.require(:task).permit(:name)
+    params.require(:task).permit(:name, :description, :deadline)
   end
 end
