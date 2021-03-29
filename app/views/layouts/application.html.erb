@@ -23,6 +23,7 @@
     />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%# <script src="./assets/index.js" defer></script> %>
   </head>
@@ -34,7 +35,7 @@
       <%= yield %>
     </div>
     <footer class="container">
-      <div class="column is-12 my-5 has-text-centered content">
+      <div class="column is-12 my-5 has-text-centered content has-text-grey-light">
         <p>© 2021 Journal Project</p>
       </div>
     </footer>

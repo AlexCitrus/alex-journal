@@ -22,12 +22,13 @@
 :root {
   --color_one: #352e51;
   --color_two: #21c58e;
-  --color_three: #191a1f;
+  --color_three: #2b2e42;
   --color_four: #34b6e3;
   --color_five: #e14846;
   --nav_bar: #ffffff;
-  --logo_color: #e1164c;
+  --logo_color: #02cd68;
   --new_color: #121319;
+  --start-now-color: #d1df56;
 }
 
 html {
@@ -37,6 +38,10 @@ html {
   height: 100%;
   width: 100%;
   
+}
+
+.margin-index{
+  margin-top: 200px;
 }
 
 .tile-color {
@@ -64,7 +69,12 @@ html {
 }
 
 .navbar {
-  background-color: #131218;
+  background-color: #2b2e42;
+}
+
+.button{
+  background: none;
+  border: none;
 }
 
 .home-text {
@@ -83,18 +93,9 @@ html {
 }
 
 .go{
-  color: #49c195;
+  color: #02cd68;
 }
-.start-now {
-  background-color: var(--color_five);
-  color: white;
-  border: black;
-  border-radius: 10px;
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 30px;
-}
+
 
 .nav_icon {
   color: var(--nav_bar);
@@ -133,8 +134,10 @@ html {
 .columns {
   margin-left: -0.75rem;
   margin-right: -0.75rem;
-  margin-top: -0.75rem;
+  margin-top: 100px;
 }
+
+
 
 .tiles {
   margin-bottom: 240px;

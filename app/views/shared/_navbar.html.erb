@@ -3,9 +3,10 @@
 <div class="container mt-4 mb-4">
   <div class="navbar-brand is-flex is-align-items-center">
 
-  <i class="fas fa-book-reader navbar-item title-icon is-size-3 logo"></i>
+
     <a class="navbar-item title-text has-text-weight-bold is-size-3 nav_icon" href="/">
-      <span class="task">Task</span><span class="go">Go</span>
+    <i class="fas fa-book-reader navbar-item title-icon is-size-3 logo"></i>
+      <span class="has-text-white">Task</span><span class="go">Go</span>
     </a>
 
     <a
@@ -27,9 +28,9 @@
       <div class="navbar-item">
         <% if user_signed_in? %>
           <div class="buttons">
-            <%= link_to 'Dashboard', journals_path, class: 'navbar-item mr-2 has-text-white'%>
-            <%= link_to 'New Journal', new_journal_path, class: 'navbar-item mr-3 has-text-white' %>
-            <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-item has-text-white' do%>
+            <%= link_to 'Dashboard', journals_path, class: 'navbar-item navbar-hover mr-2 '%>
+            <%= link_to 'New Journal', new_journal_path, class: 'navbar-item navbar-hover mr-3 ' %>
+            <%= link_to destroy_user_session_path, method: :delete, class: 'navbar-item navbar-hover ' do%>
               <i class="fas fa-sign-out-alt mr-1"></i> Sign-out
             <% end %>
           </div>

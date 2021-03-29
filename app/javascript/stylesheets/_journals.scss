@@ -1,0 +1,40 @@
+.box {
+  background-color: #2f3246;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.1);
+}
+
+.box:hover {
+  box-shadow: 0 20px 15px -15px rgba(0, 0, 0, 0.5);
+  transform: translateY(-0.3em);
+}
+
+a.navbar-hover {
+  background: linear-gradient(to right, #2c2e42 50%, #52ffc1 50%);
+  text-decoration: none;
+  background-position: 0;
+  background-size: 200%;
+  transition: all 0.2s ease;
+  color: white;
+}
+
+a.navbar-hover:hover {
+  background-position: -100%;
+  color: black;
+}
+
+.start-now {
+  background-color: var(--start-now-color);
+  color: rgb(48, 48, 48);
+  border: 3px solid rgb(48, 48, 48);
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  transition: background-color .2s ease, color .2s ease
+}
+
+.start-now:hover {
+    background-color: #3d3d3d;
+    color: #efefef;
+}
