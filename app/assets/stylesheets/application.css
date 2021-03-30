@@ -155,3 +155,11 @@ html {
   left: 0px;
   float: left;
 }
+
+.navbar-burger{
+  color: white;
+}
+
+.navbar-burger:hover{
+  color: white;
+}
