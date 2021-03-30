@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'mimemagic', '~> 0.3.0'
+gem 'mimemagic', '~> 0.3.9'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -29,6 +29,7 @@ gem 'mimemagic', '~> 0.3.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
+gem 'rexml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -58,3 +59,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "shared-mime-info", "~> 0.2.5"
+
+gem 'rack-timeout', '0.3.2'
+
+gem 'mime-types'
