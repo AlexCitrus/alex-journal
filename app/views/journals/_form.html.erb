@@ -1,18 +1,18 @@
 <%= form_with(model: journal) do |form| %>
   <% if journal.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(journal.errors.count, "error") %> prohibited this journal
-        from being saved:
-      </h2>
 
-      <ul>
-        <% journal.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+        <section class="hero is-small is-danger container-errors mb-3">
+      <div class="hero-body">
+          <ul>
+              <% journal.errors.each do |field, error| %>
+                  <li><b><%= field.upcase %></b> <%= error %>!</li>
+              <% end %>
+          </ul>
+      </div>
+      </section>
+   
   <% end %>
+  
 
 
     <div class="field mb-3">
@@ -26,15 +26,14 @@
     </div>
 
     <div class="actions">
-      <%= button_tag :submit, class:"button start-now-two" do %>
-        <% if action_name == 'new'%>
-          <i class="fas fa-plus mr-3"></i>
-          Create Journal
-        <% elsif action_name == 'edit' %>
-          <i class="fas fa-plus mr-3"></i>
-          Update Journal
+
+       <%= form.button class: "button start-now-two" do %> 
+          <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'Create' %>
+          <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
+          <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
+          <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
+          <%= action_name.capitalize %> Journal
         <% end %>
-      <% end %>
 
       <%= link_to journals_path do%>
         <div class="button start-now-three">

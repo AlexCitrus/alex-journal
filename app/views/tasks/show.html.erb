@@ -1,13 +1,50 @@
-<p id="notice"><%= notice %></p> 
 
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
+<section id="task-show" class="container container-content mt-6">
+<div class="columns">
 
-<%= link_to 'Edit', edit_journal_task_path(@journal, @task) %> 
+  <% label = task_label(@task) %>
+  
 
-<%= form_with(model: [@journal, @task, @description]) do |form| %>
-  <%= form.submit "Add Paragraph", class: 'button is-primary' %>
-<% end %>
+  <div id="task-show-left" class="column is-4 container-left-task">
+
+    <%= image_tag :'interaction-design-animate.svg'  %>
+
+    <h2 class="is-size-2 has-text-weight-bold has-text-white">
+      <%= @task.name %>
+    </h2>
+
+    <h4 class="has-text-grey-light">
+      Deadline: <%= date_parse(@task.deadline) %>
+    </h4>
+
+    <h2 class="has-text-grey-lighter">
+      Status: <span class="has-text-<%= label[:status] %>">
+        <%= label[:message] %>
+      </span>
+    </h2>
+
+    <div class="mt-5 is-flex is-align-items-center">
+      
+      <%= link_to journal_path(@journal), class:"button  has-text-primary action-tile-button mr-2" do%>
+         <i class='bx bx-arrow-back is-size-5' ></i>
+      <% end %>
+      <div class="tile-actions is-flex is-justify-content-flex-end">
+      <%= link_to edit_journal_task_path(@journal), class:"button  has-text-warning action-tile-button mr-2" do%>
+         <i class='bx bxs-edit is-size-5' ></i>
+      <% end %>
+      <%= link_to journal_task_path(@journal), method: :delete, data: { confirm: 'Are you sure?' }, class:"button has-text-danger" do %>
+        <i class='bx bxs-trash is-size-5' ></i>
+      <% end %>
+    </div>
+  </div>
+</div>
+  <div id="task-show-right" class="column is-8 container-right-task has-text-white">
+
+    <h2 class="is-size-4 has-text-weight-medium has-text-white">Task Description</h2> <br/>
+    <p class="is-size-5 has-text-white"><%= @task.description %></p>
+  </div>
+
+
+</div>
+</section>
 

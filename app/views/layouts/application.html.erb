@@ -22,9 +22,9 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
 
     <%# <script src="./assets/index.js" defer></script> %>
   </head>
@@ -35,11 +35,11 @@
     <div class="container">
       <%= yield %>
     </div>
-    <footer class="container">
+    <%# <footer class="container">
       <div class="column is-12 my-5 has-text-centered content has-text-grey-light">
         <p>© 2021 Journal Project</p>
       </div>
-    </footer>
+    </footer> %>
     
 
     <%= javascript_pack_tag 'index' %>

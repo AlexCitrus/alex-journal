@@ -25,7 +25,8 @@ class JournalsController < ApplicationController
     respond_to do |format|
       if @journal.save
         format.html do
-          redirect_to journals_path, notice: 'Journal was successfully created.'
+          redirect_to journals_path
+          flash[:success] = 'Journal was successfully created.'
         end
         format.json { render :show, status: :created, location: @journal }
       else
@@ -35,6 +36,13 @@ class JournalsController < ApplicationController
         end
       end
     end
+
+    # if @journal.save
+    #   redirect_to journals_path,
+    #               notice: 'Task was successfully created.'
+    # else
+    #   render :new
+    # end
   end
 
   # PATCH/PUT /journals/1 or /journals/1.json

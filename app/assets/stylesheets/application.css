@@ -163,3 +163,7 @@ html {
 .navbar-burger:hover{
   color: white;
 }
+
+progress{
+  border-radius: 0px;
+}

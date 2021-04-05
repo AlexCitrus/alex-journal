@@ -1,4 +1,3 @@
-
 <section id="home-dashboard-top">
 <div class="container tiles">
 <div
@@ -13,45 +12,64 @@
   <div class="task-progress-container is-flex">
       <div class="mr-3 progress-container">
       <%# <span class="has-text-black"> %>
-        0 / 0 tasks are completed!
+        <%= @journal.percent_complete %>% of tasks completed!
       <%# </span> %>
-        <progress class="progress is-success journal-progress" value="0" max="0"></progress>
+        <progress
+      class="progress is-normal is-success journal-progress"
+      value="<%= @journal.percent_complete %>" max="100"
+      
+    ></progress>
       </div>
       <div>
-
         <%= link_to new_journal_task_path(@journal), class: 'button start-now-four' do %>
 
           <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
         <% end %>
       </div>
+      <div>
+
+      </div>
     </div>
   </div>
 <div class="tile tile-container is-ancestor">
 <% @journal.tasks.each do |task| %>
+  <% if task.completed? == false %>
+    
   <div class="tile tile-item is-parent is-shady tile-color">
     <article class="tile is-child box card-bg"  id="task_box">
+    <%= raw task_label(task)[:html] %>
+    
+    <br>
     <div class="tile-contents">
       <h3 class="title is-size-3 cardTitle card_title">
       <%= task.name %></h3>
       <p class="subtitle is-size-6 mb-4 has-text-grey-light">
         <span class="mr-2">
-          <i class="fas fa-clipboard-list mr-2 aria-hidden="true"></i>
-          <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+          <i class='bx bx-timer has-text-danger is-size-6'></i>
+          <span class="has-text-grey-light is-size-6">
+          <%= date_parse(task.deadline) %>
+          </span>
         </span>
       </p>
       <p class="subtitle is-size-6 mb-6 has-text-grey">
-      
         <span class="mr-2">
-          <i class="fas fa-clock mr-2 aria-hidden="true"></i>
           
+          <i class='bx bxs-tag-alt mr-1' ></i>
+          <%= truncate(strip_tags(task.description.to_s), length: 100) %>
         </span>
+      
       </p>
     </div>
+      <div class="tile-actions is-flex is-justify-content-flex-end">
+      <a href="<%=journal_task_path(@journal)%>" class='button has-text-success action-tile-button mr-2' data-turbolinks="false" data-reflex="click->CompleterReflex#complete" data-task-id= '<%= task.id %>'><i class='bx bx-check is-size-4' ></i></a>
+      <%= link_to journal_task_path(@journal, task), class:"button  has-text-primary action-tile-button mr-2" do%>
+         <i class='bx bx-expand is-size-5' ></i>
+      <% end %>
       <div class="tile-actions is-flex is-justify-content-flex-end">
       <%= link_to edit_journal_task_path(@journal, task), class:"button  has-text-warning action-tile-button mr-2" do%>
          <i class='bx bxs-edit is-size-5' ></i>
       <% end %>
-      <%= link_to journal_task_path(@journal, task), method: :delete, data: { confirm: 'Are you sure?' }, class:"button has-text-danger" do %>
+      <%= link_to journal_task_path(@journal, task), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class:"button has-text-danger" do %>
         <i class='bx bxs-trash is-size-5' ></i>
       <% end %>
       </div>
@@ -59,8 +77,79 @@
     </article>
   </div>
   <% end %>
+  <% end %>
 </div>
 </div>
-
-
 </section>
+
+<% unless @journal.percent_complete == 0 %>
+  
+<section id="home-dashboard-top">
+<div class="container tiles">
+<div
+  id="task_box2"
+  class="box info-box has-text-white box-bg2 mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-center"
+>
+  <div class="is-size-4">
+
+    <i class="fas fa-check-circle mr-1 logo-font"></i>
+    <span>
+    Completed Tasks
+    </span>
+    
+  </div>
+    </div>
+
+<div class="tile tile-container is-ancestor">
+<% @journal.tasks.each do |task| %>
+  <% unless task.completed? == false %>
+    
+  <div class="tile tile-item is-parent is-shady tile-color">
+    <article class="tile is-child box card-bg"  id="task_box">
+    <%= raw task_label(task)[:html] %>
+    
+    <br>
+    <div class="tile-contents">
+      <h3 class="title is-size-3 cardTitle card_title">
+      <%= task.name %></h3>
+      <p class="subtitle is-size-6 mb-4 has-text-grey-light">
+        <span class="mr-2">
+          <i class='bx bx-timer has-text-danger is-size-6'></i>
+          <span class="has-text-grey-light is-size-6">
+          <%= date_parse(task.deadline) %>
+          </span>
+        </span>
+      </p>
+      <p class="subtitle is-size-6 mb-6 has-text-grey">
+        <span class="mr-2">
+          
+          <i class='bx bxs-tag-alt mr-1' ></i>
+          <%= truncate(strip_tags(task.description.to_s), length: 100) %>
+        </span>
+      
+      </p>
+    </div>
+      <div class="tile-actions is-flex is-justify-content-flex-end">
+      <%= link_to journal_task_path(@journal, task) do%>   
+      <button class='button has-text-success action-tile-button mr-2' data-reflex="click->CompleterReflex#complete" data-task-id= '<%= task.id %>' data-turbolinks="false"><i class='bx bx-check is-size-4' ></i></button>
+      <% end %>
+      <%= link_to journal_task_path(@journal, task), class:"button  has-text-primary action-tile-button mr-2" do%>
+         <i class='bx bx-expand is-size-5' ></i>
+      <% end %>
+      <div class="tile-actions is-flex is-justify-content-flex-end">
+      <%= link_to edit_journal_task_path(@journal, task), class:"button  has-text-warning action-tile-button mr-2" do%>
+         <i class='bx bxs-edit is-size-5' ></i>
+      <% end %>
+      <%= link_to journal_task_path(@journal, task), method: :delete, data: { confirm: 'Are you sure you want to delete this task?' }, class:"button has-text-danger" do %>
+        <i class='bx bxs-trash is-size-5' ></i>
+      <% end %>
+      </div>
+      
+    </article>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+</div>
+</section>
+<% end %>

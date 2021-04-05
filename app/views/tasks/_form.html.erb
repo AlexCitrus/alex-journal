@@ -1,14 +1,16 @@
 <%= form_with(model: [journal, task]) do |form| %>
   <% if task.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(task.errors.count, "error") %> prohibited this task from being saved:</h2>
 
-      <ul>
-        <% task.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
+        <section class="hero is-small is-danger container-errors mb-3">
+      <div class="hero-body">
+          <ul>
+              <% task.errors.each do |field, error| %>
+                  <li><b><%= field.upcase %></b> <%= error %>!</li>
+              <% end %>
+          </ul>
+      </div>
+      </section>
+   
   <% end %>
 
 
@@ -16,7 +18,7 @@
   <div class="control has-icons-left has-icons-right">
     <%= form.text_field :name, placeholder: "Task Name", class: "input", autocomplete: :off %>
     <span class="icon is-left">
-      <i class="fas fa-cogs"></i>
+      <i class='bx bx-task is-size-4'></i>
     </span>
   </div>
   </div>
@@ -27,20 +29,28 @@
   </div>
   </div>
 
+<div class="field">
+<div class="control">
+
+  <%= form.label :deadline, class:"has-text-white" do%>
+  <span>Set Deadline:</span>
+  <% end %>
+  <%= form.date_field :deadline, class: "input" %>
+
+</div>
+</div>
   
 
   <div class="actions">
-    <%= button_tag :submit, class:"button start-now-two" do %>
-        <% if action_name == 'new'%>
-          <i class="fas fa-plus mr-3"></i>
-          Create Task
-        <% elsif action_name == 'edit' %>
-          <i class="fas fa-plus mr-3"></i>
-          Update Task
+    <%= form.button class: "button start-now-two" do %> 
+          <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'Create' %>
+          <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
+          <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
+          <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
+          <%= action_name.capitalize %> Task
         <% end %>
-      <% end %>
 
-      <%= link_to journals_path do%>
+      <%= link_to journal do%>
         <div class="button start-now-three">
           <i class="fas fa-undo mr-2"></i> Cancel
         </div>
