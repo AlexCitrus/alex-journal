@@ -6,12 +6,16 @@ burgerIcon.addEventListener("click", () => {
   burgerIcon.classList.toggle("is-active");
 });
 
-const deleteModal = document.querySelectorAll("#delete-modal");
-const modalDelete = document.querySelector(".modal_delete");
 
-for (let i = 0; i < deleteModal.length; i++){
 
-    deleteModal[i].addEventListener("click", () => {
-      modalDelete.classList.add("is-active");
-    });
+function hideNotice() {
+  setInterval(function() {
+    document.querySelector('.notification').style.display = "none";
+  }, 6000);
+
+  
 }
+
+hideNotice();
+
+

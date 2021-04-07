@@ -4,7 +4,7 @@ class Task < ApplicationRecord
   has_rich_text :description
   validate :not_past_due
 
-  scope :near_deadline, -> { where("completed = false and deadline <= '#{Date.today}'") }
+  # scope :near_deadline, -> { where("completed = false and deadline <= '#{Date.today}'") }
 
   validates :name,
             presence: true,
@@ -17,6 +17,11 @@ class Task < ApplicationRecord
   validates :deadline,
             presence: true
 
+
+  COMPLETED_OPTIONS = [
+    ['In-progress', 'in-progress']
+
+  ]
             
 
   def not_past_due

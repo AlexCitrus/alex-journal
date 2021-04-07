@@ -27,17 +27,19 @@ class TasksController < ApplicationController
 
     if @task.save
       redirect_to @journal,
-                  notice: 'Task was successfully created.'
+                  success: 'Task was successfully created.'
     else
+
       render :new
     end
   end
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
+
     if @task.update(task_params)
       redirect_to @journal,
-                              notice: 'Task was successfully updated.'
+      success: 'Task was successfully updated.'
     else
       render :edit
     end
@@ -46,7 +48,7 @@ class TasksController < ApplicationController
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
-      redirect_to @journal, notice: 'Task was successfully destroyed.'
+      redirect_to @journal, success: 'Task was successfully destroyed.'
     end
   
 

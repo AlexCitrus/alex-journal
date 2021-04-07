@@ -22,6 +22,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
+    <%# <script src="https://unpkg.com/scrollreveal"></script> %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
@@ -33,6 +34,30 @@
     <%= render 'shared/navbar' %>
 
     <div class="container">
+      <% flash.each do |name, msg| %>
+      <% unless msg == "Signed in successfully." || "Signed out successfully." || "Invalid Email or password." %>
+        
+        <div class="notification is-<%= name %> has-text-centered mt-3">
+        <span class="is-size-5 has-text-weight-bold has-text-centered"><%= msg %></span>
+      </div>
+      <% end %>
+
+        <% if msg == "Signed in successfully." || "Signed out successfully." && msg != "Invalid Email or password."%>
+          <div class="notification is-success has-text-centered mt-3">
+        <span class="is-size-5 has-text-weight-bold has-text-centered"><%= msg %></span>
+      </div>
+        <% end %>
+
+        <% if msg == "Invalid Email or password." %>
+          <div class="notification is-danger has-text-centered mt-3">
+        <span class="is-size-5 has-text-weight-bold has-text-centered"><%= msg %></span>
+      </div>
+        <% end %>
+        
+    
+      
+
+      <% end %>
       <%= yield %>
     </div>
     <%# <footer class="container">

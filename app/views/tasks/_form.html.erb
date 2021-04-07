@@ -1,8 +1,9 @@
 <%= form_with(model: [journal, task]) do |form| %>
+
   <% if task.errors.any? %>
 
-        <section class="hero is-small is-danger container-errors mb-3">
-      <div class="hero-body">
+        <section class="notification is-danger has-text-centered mt-3  mb-3">
+      <div class="is-size-6 has-text-weight-bold has-text-centered">
           <ul>
               <% task.errors.each do |field, error| %>
                   <li><b><%= field.upcase %></b> <%= error %>!</li>

@@ -1,6 +1,5 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
   <section class="container container-content mt-6 mr-6 ml-6">
 <div class="columns">
 
@@ -9,6 +8,7 @@
 </div>
 
 <div class="column is-6 container-right">
+  <%= render "devise/shared/error_messages", resource: resource %>
 <form class="new_user">
   <div class="field">
   <div class="control">

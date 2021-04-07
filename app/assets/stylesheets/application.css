@@ -40,6 +40,18 @@ html {
   
 }
 
+@keyframes fadein {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.notification{
+  animation: fadein 7s;
+  animation-delay: 0s;
+  animation-fill-mode: forwards;
+}
+
 
 .margin-index{
   margin-top: 200px;
