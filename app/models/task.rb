@@ -6,29 +6,20 @@ class Task < ApplicationRecord
 
   # scope :near_deadline, -> { where("completed = false and deadline <= '#{Date.today}'") }
 
-  validates :name,
-            presence: true,
-            length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 20 }
 
-  validates :description,
-            presence: true,
-            length: { maximum: 2500 }
+  validates :description, presence: true, length: { maximum: 2500 }
 
-  validates :deadline,
-            presence: true
+  validates :deadline, presence: true
 
 
-  COMPLETED_OPTIONS = [
-    ['In-progress', 'in-progress']
-
-  ]
-            
+  COMPLETED_OPTIONS = [%w[Started false], %w[Completed true]]
 
   def not_past_due
     return if (deadline.nil? or deadline.today?)
 
     if self.new_record?
-      return errors.add(:deadline, "is already past") if deadline.past?
+      return errors.add(:deadline, 'is already past') if deadline.past?
     end
 
     unless self.new_record?
@@ -38,12 +29,7 @@ class Task < ApplicationRecord
 
       return if ((new_deadline == old_deadline) and !new_deadline.past?)
 
-      return errors.add(:deadline, "is already past") if new_deadline.past?
+      return errors.add(:deadline, 'is already past') if new_deadline.past?
     end
   end
-
-  
-
 end
-
-
