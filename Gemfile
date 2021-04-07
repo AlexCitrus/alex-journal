@@ -56,6 +56,7 @@ group :test do
   gem 'webdrivers'
 
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'shoulda-matchers'
 
 end
 
@@ -69,5 +70,3 @@ gem 'rack-timeout', '0.3.2'
 gem 'mime-types'
 
 gem 'jquery-rails'
-
-gem "stimulus_reflex", "~> 3.4"
