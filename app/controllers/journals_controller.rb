@@ -26,7 +26,7 @@ class JournalsController < ApplicationController
       if @journal.save
         format.html do
           redirect_to journals_path,
-          success: 'Journal created successfully.'
+          success: 'Category created successfully!'
         end
         format.json { render :show, status: :created, location: @journal }
       else
