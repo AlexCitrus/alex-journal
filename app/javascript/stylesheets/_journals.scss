@@ -1,5 +1,5 @@
 .box {
-  background-color: #2f3246;
+  background-color: #36393e;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.1);
 }
@@ -10,7 +10,7 @@
 }
 
 .box2 {
-  background-color: #2f3246;
+  background-color: #36393e;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.1);
   color: white;
@@ -22,7 +22,7 @@
 }
 
 a.navbar-hover {
-  background: linear-gradient(to right, #2c2e42 50%, #52ffc1 50%);
+  background: linear-gradient(to right, #2c2f34 50%, #52ffc1 50%);
   text-decoration: none;
   background-position: 0;
   background-size: 200%;
@@ -31,7 +31,7 @@ a.navbar-hover {
 }
 
 a.navbar-hover-signout {
-  background: linear-gradient(to right, #2c2e42 50%, #ff5252 50%);
+  background: linear-gradient(to right, #2c2f34 50%, #ff5252 50%);
   text-decoration: none;
   background-position: 0;
   background-size: 200%;
@@ -72,16 +72,17 @@ a.navbar-hover:hover {
 .start-now {
   background-color: var(--logo_color);
   color: rgb(48, 48, 48);
-  border: 3px solid rgb(48, 48, 48);
-  padding-left: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 30px;
+
+  border-radius: 5px;
+  padding-left: 35px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-right: 35px;
+  font-weight: bold;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .start-now:hover {
-  background-color: #3d3d3d;
   color: #efefef;
 }
 

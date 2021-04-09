@@ -22,11 +22,11 @@
 :root {
   --color_one: #352e51;
   --color_two: #21c58e;
-  --color_three: #2b2e42;
+  --color_three: #2c2f34;
   --color_four: #34b6e3;
   --color_five: #e14846;
   --nav_bar: #ffffff;
-  --logo_color: #02cd68;
+  --logo_color: #93c33c;
   --new_color: #121319;
   --start-now-color: #d1df56;
 }
@@ -40,6 +40,16 @@ html {
   
 }
 
+::-moz-selection { /* Code for Firefox */
+  color: black;
+  background:#6fa713;
+}
+
+
+::selection{
+  color: black;
+  background:#6fa713;
+}
 @keyframes fadein {
   0% { opacity: 0; }
   20% { opacity: 1; }
@@ -82,7 +92,7 @@ html {
 }
 
 .navbar {
-  background-color: #2b2e42;
+  background-color: #2c2f34;
 }
 
 .button{
