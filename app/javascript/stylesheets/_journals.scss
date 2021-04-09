@@ -22,12 +22,13 @@
 }
 
 a.navbar-hover {
-  background: linear-gradient(to right, #2c2f34 50%, #52ffc1 50%);
+  background: linear-gradient(to right, #2c2f34 50%, #93c33c 50%);
   text-decoration: none;
   background-position: 0;
   background-size: 200%;
   transition: all 0.2s ease;
   color: white;
+  border-radius: 5px;
 }
 
 a.navbar-hover-signout {
@@ -37,6 +38,7 @@ a.navbar-hover-signout {
   background-size: 200%;
   transition: all 0.2s ease;
   color: white;
+  border-radius: 5px;
 }
 
 a.navbar-hover-signout:hover {
