@@ -50,7 +50,7 @@ class JournalsController < ApplicationController
     respond_to do |format|
       if @journal.update(journal_params)
         format.html do
-          redirect_to journals_path, success: 'Journal was successfully updated.'
+          redirect_to journals_path, success: 'Category was successfully updated.'
         end
         format.json { render :show, status: :ok, location: @journal }
       else
@@ -67,7 +67,7 @@ class JournalsController < ApplicationController
     @journal.destroy
     respond_to do |format|
       format.html do
-        redirect_to journals_url, success: 'Journal was successfully destroyed.'
+        redirect_to journals_url, success: 'Category was successfully destroyed.'
       end
       format.json { head :no_content }
     end
