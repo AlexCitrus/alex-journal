@@ -20,7 +20,7 @@
     <div class="field mb-3">
     <div class="control has-icons-left has-icons-right">
       
-      <%= form.text_field :name, placeholder: "Journal Name", class: "input", autocomplete: :off %>
+      <%= form.text_field :name, placeholder: "Category Title", class: "input", autocomplete: :off %>
       <span class="icon is-left">
       <i class='bx bxs-pencil' ></i>
     </span>
@@ -34,7 +34,7 @@
           <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
           <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
           <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
-          <%= action_name.capitalize %> Journal
+          <%= action_name.capitalize %> Category
         <% end %>
 
       <%= link_to journals_path do%>
