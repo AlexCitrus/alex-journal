@@ -212,6 +212,10 @@ h3 {
     grid-template-columns: 1fr;
   }
 
+  .empty-dashboard img{
+    width: 70%;
+  }
+
   #dashboard-top-card-statistics,
   #task_box {
     flex-direction: column
