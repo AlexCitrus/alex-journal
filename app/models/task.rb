@@ -4,7 +4,6 @@ class Task < ApplicationRecord
   has_rich_text :description
   validate :not_past_due
 
-  # scope :near_deadline, -> { where("completed = false and deadline <= '#{Date.today}'") }
 
   validates :name, presence: true, length: { maximum: 20 }
 
