@@ -1,12 +1,14 @@
 
 <section id="task-show" class="container container-content mt-6">
-<div class="columns">
+<div class="columns is-full">
 
   <% label = task_label(@task) %>
   
 
-  <div id="task-show-left" class="column is-4 container-left-task">
+  <div id="task-show-left" class="column is-6 container-left-task ml-6">
 
+  <div class="taskExpand">
+  
     <%= image_tag :'interaction-design-animate.svg'  %>
 
     <h2 class="is-size-2 has-text-weight-bold has-text-white">
@@ -30,18 +32,21 @@
       <% end %>
       <div class="tile-actions is-flex is-justify-content-flex-end">
       <%= link_to edit_journal_task_path(@journal), class:"button  has-text-warning action-tile-button mr-2" do%>
-         <i class='bx bxs-edit is-size-5' ></i>
+         <i class='bx bxs-cog is-size-5' ></i>
       <% end %>
       <%= link_to journal_task_path(@journal), method: :delete, data: { confirm: 'Are you sure?' }, class:"button has-text-danger" do %>
         <i class='bx bxs-trash is-size-5' ></i>
       <% end %>
     </div>
   </div>
+  </div>
 </div>
-  <div id="task-show-right" class="column is-8 container-right-task has-text-white">
-
+  <div id="task-show-right" class="column is-5 container-right-task has-text-white box">
+  <div class="newDiv">
+  
     <h2 class="is-size-4 has-text-weight-medium has-text-white">Task Description</h2> <br/>
     <p class="is-size-5 has-text-white"><%= @task.description %></p>
+  </div>
   </div>
 
 

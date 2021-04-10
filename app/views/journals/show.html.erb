@@ -1,11 +1,11 @@
-<section id="home-dashboard-top">
+<section id="dashboard-top-card">
 <div class="container tiles">
 <div
   id="task_box"
   class="box info-box has-text-white box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-space-between"
 >
   <div class="is-size-4">
-    <i class='bx bx-book-reader mr-1 icon-color logo-font'></i>
+    <i class='fas fa-angle-right mr-1 icon-color logo-font'></i>
     <%= @journal.name %>
     
   </div>
@@ -31,8 +31,22 @@
       </div>
     </div>
   </div>
+<% if @journal.tasks.count == 0 %>
+  <div class="empty-dashboard">
+    <%= image_tag("empty-animate.svg", :alt => "rss feed") %>
+    <p class="is-size-4 mt-5 has-text-weight-semibold has-text-white">
+         This category has no tasks. 
+
+         <%= link_to new_journal_task_path(@journal) do %>
+                    <span class ="add-link">Add one now!</span>
+            <% end %>
+      </p>
+  </div>
+<% end %>
 <div class="tile tile-container is-ancestor">
 <% @journal.tasks.each do |task| %>
+
+
   <% if task.completed? == false %>
     
   <div class="tile tile-item is-parent is-shady tile-color">
@@ -84,7 +98,7 @@
 
 <% unless @journal.percent_complete == 0 %>
   
-<section id="home-dashboard-top">
+<section id="dashboard-top-card">
 <div class="container tiles">
 <div
   id="task_box2"

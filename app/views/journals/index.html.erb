@@ -1,9 +1,9 @@
 
 
-<section id="home-dashboard-top">
+<section id="dashboard-top-card">
 <div class="container tiles">
 <div
-  id="home-dashboard-top-statistics"
+  id="dashboard-top-card-statistics"
   class="box box2 info-box box-bg mt-4 has-text-weight-semibold is-flex is-align-items-center is-justify-content-center"
 >
   <div class="is-size-3">
@@ -19,8 +19,26 @@
 
 
 
+<% if @journals.count == 0 %>
+  <div class="empty-dashboard">
+    <%= image_tag("empty-animate.svg", :alt => "rss feed") %>
+    <p class="is-size-4 mt-5 has-text-weight-semibold has-text-white">
+         You have no categories. 
+
+         <%= link_to new_journal_path do %>
+                   <span class="add-link">
+                   Add one now!
+                   </span> 
+            <% end %>
+      </p>
+  </div>
+<% end %>
 <div class="tile tile-container is-ancestor">
 <% @journals.each do |journal| %>
+
+
+<% unless @journals.count == 0 %>
+  
   <div class="tile tile-item is-parent is-shady tile-color">
     <article class="tile is-child box card-bg">
     <div class="tile-contents">
@@ -58,6 +76,9 @@
       
     </article>
   </div>
+<% end %>
+
+
   <% end %>
 </div>
 
