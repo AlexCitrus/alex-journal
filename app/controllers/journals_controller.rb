@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class JournalsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_journal, only: %i[show edit update destroy]
@@ -26,7 +28,7 @@ class JournalsController < ApplicationController
       if @journal.save
         format.html do
           redirect_to journals_path,
-          success: 'Category created successfully!'
+                      success: 'Category created successfully!'
         end
         format.json { render :show, status: :created, location: @journal }
       else

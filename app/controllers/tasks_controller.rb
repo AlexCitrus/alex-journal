@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 class TasksController < ApplicationController
   before_action :set_journal
   before_action :set_task, only: %i[show edit update destroy]
 
-
   def index
     redirect_to @journal
   end
-  
+
   # GET /tasks/1 or /tasks/1.json
   def show
-  @description = @task.descriptions.build
+    @description = @task.descriptions.build
   end
 
   # GET /tasks/new
@@ -36,10 +37,9 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1 or /tasks/1.json
   def update
-
     if @task.update(task_params)
       redirect_to @journal,
-      success: 'Task was successfully updated.'
+                  success: 'Task was successfully updated.'
     else
       render :edit
     end
@@ -48,17 +48,15 @@ class TasksController < ApplicationController
   # DELETE /tasks/1 or /tasks/1.json
   def destroy
     @task.destroy
-      redirect_to @journal, success: 'Task was successfully destroyed.'
-    end
-  
+    redirect_to @journal, success: 'Task was successfully destroyed.'
+  end
 
-
-    # def complete
-    #   if task.completed? = false
-    #     task.update(:completed, true)
-    #   end
-    #   redirect_to @journal
-    # end
+  # def complete
+  #   if task.completed? = false
+  #     task.update(:completed, true)
+  #   end
+  #   redirect_to @journal
+  # end
 
   private
 
@@ -66,7 +64,6 @@ class TasksController < ApplicationController
   def set_journal
     @journal = current_user.journals.find(params[:journal_id])
   end
-
 
   def set_task
     @task = @journal.tasks.find(params[:id])
