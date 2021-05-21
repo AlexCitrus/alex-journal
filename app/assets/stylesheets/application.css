@@ -52,7 +52,21 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2c2f34;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ededed;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b8b8b;
 }
 
 @keyframes fadein {
