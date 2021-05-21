@@ -20,7 +20,7 @@
     <div class="field mb-3">
     <div class="control has-icons-left has-icons-right">
       
-      <%= form.text_field :name, placeholder: "Category Title", class: "input", autocomplete: :off %>
+      <%= form.text_field :name, placeholder: I18n.t(:category_title), class: "input", autocomplete: :off %>
       <span class="icon is-left">
       <i class='bx bxs-pencil' ></i>
     </span>
@@ -34,12 +34,12 @@
           <%= raw '<i class="fas fa-plus mr-3"></i>' if action_name.capitalize == 'New' %>
           <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Update' %>
           <%= raw '<i class="fas fa-edit mr-3"></i>' if action_name.capitalize == 'Edit' %>
-          <%= action_name.capitalize %> Category
+          <%= I18n.t(:new) if action_name.capitalize == "New" || action_name.capitalize == "Bagong" %><%= I18n.t(:edit) if action_name.capitalize == "Edit" || action_name.capitalize == "Baguhin ang" %> <%= I18n.t(:category)%>
         <% end %>
 
       <%= link_to journals_path do%>
         <div class="button start-now-three">
-          <i class="fas fa-undo mr-2"></i> Cancel
+          <i class="fas fa-undo mr-2"></i> <%= I18n.t(:cancel)%>
         </div>
       <% end %>
     </div>

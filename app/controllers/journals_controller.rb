@@ -3,6 +3,15 @@
 class JournalsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_journal, only: %i[show edit update destroy]
+  before_action :set_locale
+
+  def set_locale
+    if current_user.language == "English"
+      I18n.locale = :en
+    elsif current_user.language == "Filipino"
+      I18n.locale = :tl
+    end
+  end
 
   # GET /journals or /journals.json
   def index
@@ -28,7 +37,7 @@ class JournalsController < ApplicationController
       if @journal.save
         format.html do
           redirect_to journals_path,
-                      success: 'Category created successfully!'
+                      success: I18n.t(:category_success)
         end
         format.json { render :show, status: :created, location: @journal }
       else
@@ -52,7 +61,7 @@ class JournalsController < ApplicationController
     respond_to do |format|
       if @journal.update(journal_params)
         format.html do
-          redirect_to journals_path, success: 'Category was successfully updated.'
+          redirect_to journals_path, success: I18n.t(:category_success_update)
         end
         format.json { render :show, status: :ok, location: @journal }
       else
@@ -69,7 +78,7 @@ class JournalsController < ApplicationController
     @journal.destroy
     respond_to do |format|
       format.html do
-        redirect_to journals_url, success: 'Category was successfully destroyed.'
+        redirect_to journals_url, success: "Category was successfully destroyed."
       end
       format.json { head :no_content }
     end

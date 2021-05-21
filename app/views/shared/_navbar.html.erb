@@ -34,10 +34,10 @@
             <% end %>
 
             <%= link_to new_journal_path, class: 'navbar-item navbar-hover mr-3 has-text-weight-medium' do %>
-            <i class='bx bx-plus mr-1' ></i> New Category
+            <i class='bx bx-plus mr-1' ></i> <%= I18n.t(:new_category)%>
             <% end %>
             <%= link_to destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure you want to sign-out?' }, class: 'navbar-item navbar-hover-signout ' do%>
-              <i class="fas fa-sign-out-alt mr-1"></i> Sign-out
+              <i class="fas fa-sign-out-alt mr-1"></i> <%= I18n.t(:log_out)%>
             <% end %>
           </div>
         <% else %>

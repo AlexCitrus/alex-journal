@@ -9,7 +9,7 @@
   <div class="is-size-3 has-text-centered">
 
     <i class='bx bxs-book-content mr-1 logo-font is-size-4'></i>
-    Task Categories
+    <%= I18n.t(:task_categories) %> 
   </div>
   <% @journals.each do |journal| %>
   <div class="categories-progress-container">
@@ -19,15 +19,18 @@
 
 
 
+
+
+
 <% if @journals.count == 0 %>
   <div class="empty-dashboard">
     <%= image_tag("empty-animate.svg", :alt => "rss feed") %>
     <p class="is-size-4 mt-5 has-text-weight-semibold has-text-white">
-         You have no categories. 
+         <%= I18n.t(:empty) %> 
 
          <%= link_to new_journal_path do %>
                    <span class="add-link">
-                   Add one now!
+                   <%= I18n.t(:add) %> 
                    </span> 
             <% end %>
       </p>
@@ -58,7 +61,7 @@
       <p class="subtitle is-size-6 mb-6 has-text-grey">
         <span class="mr-2">
           <i class="fas fa-clock mr-2 aria-hidden="true"></i>
-          Started <%= time_ago_in_words(journal.created_at) %> ago
+          <%= I18n.t(:started)%> <%= time_ago_in_words(journal.created_at) %> <%= I18n.t(:ago)%>
         </span>
       </p>
     </div>

@@ -12,7 +12,7 @@
   <div class="task-progress-container is-flex">
       <div class="mr-3 progress-container">
       <%# <span class="has-text-black"> %>
-        <%= @journal.percent_complete %>% of tasks completed!
+        <%= @journal.percent_complete %>% <%= I18n.t(:task_completed)%>
       <%# </span> %>
         <progress
       class="progress is-normal is-success journal-progress"
@@ -23,11 +23,10 @@
       <div>
         <%= link_to new_journal_task_path(@journal), class: 'button start-now-four' do %>
 
-          <i class="fas fa-plus mr-3" aria-hidden="true"></i> Task
+          <i class="fas fa-plus mr-3" aria-hidden="true"></i> <%= I18n.t(:task)%>
         <% end %>
       </div>
       <div>
-
       </div>
     </div>
   </div>
@@ -35,10 +34,10 @@
   <div class="empty-dashboard">
     <%= image_tag("empty-animate.svg", :alt => "rss feed") %>
     <p class="is-size-4 mt-5 has-text-weight-semibold has-text-white">
-         This category has no tasks. 
+         <%= I18n.t(:task_empty)%> 
 
          <%= link_to new_journal_task_path(@journal) do %>
-                    <span class ="add-link">Add one now!</span>
+                    <span class ="add-link"><%= I18n.t(:add)%></span>
             <% end %>
       </p>
   </div>

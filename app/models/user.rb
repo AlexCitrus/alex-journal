@@ -11,19 +11,10 @@ class User < ApplicationRecord
 
   has_many :journals
 
-  validates :language, presence: true 
+  # validates :language, presence: true 
 
   LANGUAGE_OPTIONS = %w[English Filipino].freeze
 
-  def set_language
-    return if language.nil?
-    
-    if language == "English"
-
-    elsif language == "Filipino"
-
-    end
-
-  end
   
+
 end
