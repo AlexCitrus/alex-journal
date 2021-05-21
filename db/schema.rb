@@ -70,13 +70,13 @@ ActiveRecord::Schema.define(version: 2021_03_31_124642) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
+    t.text "description"
     t.integer "position"
+    t.datetime "deadline"
+    t.boolean "completed", default: false
     t.bigint "journal_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.text "description"
-    t.datetime "deadline"
-    t.boolean "completed"
     t.index ["journal_id"], name: "index_tasks_on_journal_id"
   end
 

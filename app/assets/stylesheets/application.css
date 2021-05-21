@@ -50,6 +50,11 @@ html {
   color: black;
   background:#6fa713;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
 @keyframes fadein {
   0% { opacity: 0; }
   20% { opacity: 1; }
